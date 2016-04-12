@@ -1,15 +1,12 @@
-﻿using System;
-
-namespace WindowsFormsApplication1
+﻿namespace WindowsFormsApplication1
 {
+    
     partial class Form1
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
-        public EventHandler Form1_Load { get; private set; }
 
         /// <summary>
         /// Clean up any resources being used.
@@ -36,19 +33,17 @@ namespace WindowsFormsApplication1
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(1786, 757);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.ResumeLayout(false);
 
         }
 
-       
-
         #endregion
     }
 }
-

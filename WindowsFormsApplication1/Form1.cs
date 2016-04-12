@@ -1,6 +1,4 @@
 ﻿
-
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +14,6 @@ namespace WindowsFormsApplication1
     {
 
         List<Figura> figuras;
-
         public Form1()
         {
 
@@ -32,26 +29,19 @@ namespace WindowsFormsApplication1
                 c.Dibuja(this);
                 figuras.Add(c);
 
+
             }
             else if (e.Button == MouseButtons.Right)
             {
+
                 Rectangulo r = new Rectangulo(e.X, e.Y);
                 r.Dibuja(this);
                 figuras.Add(r);
 
+
+                
             }
 
         }
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (Figura f in figuras)
-            {
-                f.Dibuja(this);
-
-            }
-        }
-
-
     }
 }
