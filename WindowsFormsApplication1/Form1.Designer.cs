@@ -44,7 +44,7 @@
             this.colorToolStripMenuItem,
             this.figuraToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             this.contextMenuStrip1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuStrip1_MouseClick);
             // 
@@ -60,8 +60,9 @@
             this.rectanguloToolStripMenuItem,
             this.circuloToolStripMenuItem});
             this.figuraToolStripMenuItem.Name = "figuraToolStripMenuItem";
-            this.figuraToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.figuraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.figuraToolStripMenuItem.Text = "Figura";
+            this.figuraToolStripMenuItem.Click += new System.EventHandler(this.figuraToolStripMenuItem_Click);
             // 
             // rectanguloToolStripMenuItem
             // 

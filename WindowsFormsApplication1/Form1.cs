@@ -12,13 +12,18 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
-
+        enum TipoFigura {Rectangulo,Circulo}
+        private TipoFigura figura_actual;
+        
         List<Figura> figuras;
         public Form1()
         {
-
+          
             figuras = new List<Figura>();
             InitializeComponent();
+            figura_actual = TipoFigura.Circulo;
+          //  circuloToolStripMenuItem
+
         }
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
@@ -70,7 +75,12 @@ namespace WindowsFormsApplication1
 
         private void rectanguloToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            figura_actual = TipoFigura.Rectangulo;
+        }
 
+        private void figuraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            figura_actual = TipoFigura.Circulo;
         }
     }
 }
