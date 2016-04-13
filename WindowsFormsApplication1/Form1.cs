@@ -64,7 +64,12 @@ namespace WindowsFormsApplication1
 
         private void contextMenuStrip1_MouseClick(object sender, MouseEventArgs e)
         {
-            ContextMenuStrip.Show(this,e.X, e.Y);
+            contextMenuStrip1.Show(this, e.X, e.Y);
+
+        }
+
+        private void rectanguloToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }

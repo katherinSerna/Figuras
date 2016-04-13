@@ -49,8 +49,6 @@ namespace WindowsFormsApplication1
     }
 
 
-
-
     class Circulo : Figura
     {
         public Circulo(int x, int y) : base(x, y)
