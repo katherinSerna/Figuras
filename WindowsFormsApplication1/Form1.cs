@@ -43,5 +43,29 @@ namespace WindowsFormsApplication1
             }
 
         }
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Figura f in figuras)
+            {
+                f.Dibuja(this);
+
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void contextMenuStrip1_MouseClick(object sender, MouseEventArgs e)
+        {
+            ContextMenuStrip.Show(this,e.X, e.Y);
+
+        }
     }
 }
