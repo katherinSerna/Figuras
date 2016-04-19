@@ -41,7 +41,9 @@ namespace WindowsFormsApplication1
         public override void Dibuja(Form f)
         {
             Graphics g = f.CreateGraphics();
-            g.DrawRectangle(pluma, X, Y, ancho, largo);
+            g.DrawRectangle(pluma, this.X, this.Y, ancho, largo);
+
+
 
         }
 
