@@ -105,6 +105,7 @@ namespace WindowsFormsApplication1
         private void circuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
             figura_actual = TipoFigura.Circulo;
+            
         }
     }
 }

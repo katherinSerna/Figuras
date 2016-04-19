@@ -10,6 +10,8 @@ namespace WindowsFormsApplication1
 {
     abstract class Figura
     {
+        Random aleatorio = new Random();
+
         public int X, Y;
         public Pen pluma;
         public Brush brocha;
@@ -21,8 +23,8 @@ namespace WindowsFormsApplication1
             X = x;
             Y = y;
             pluma = new Pen(Color.Red, 2);
-            ancho = 10;
-            largo = 15;
+            ancho = aleatorio.Next(1,100);
+            largo = aleatorio.Next(1,100);
 
 
         }
@@ -62,7 +64,7 @@ namespace WindowsFormsApplication1
         {
             Graphics g = f.CreateGraphics();
             g.DrawEllipse(pluma, X, Y, ancho, largo);
-
+            
         }
 
 
