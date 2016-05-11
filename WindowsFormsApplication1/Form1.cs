@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
@@ -14,14 +15,16 @@ namespace WindowsFormsApplication1
         enum TipoFigura {Rectangulo, Circulo}
         private TipoFigura figura_actual;
         
-        List<Figura> figuras;
+        private List<Figura> rectangulos;
         public Form1()
         {
-          
-            figuras = new List<Figura>();
-            InitializeComponent();
+
             figura_actual = TipoFigura.Circulo;
-            figura_actual = TipoFigura.Rectangulo;
+          //  figura_actual = TipoFigura.Rectangulo;
+            rectangulos = new List<Figura>();
+            InitializeComponent();
+            circuloToolStripMenuItem.Checked = true;
+
             //  circuloToolStripMenuItem
 
         }
@@ -29,13 +32,19 @@ namespace WindowsFormsApplication1
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+
+            if (MouseButtons.Right == e.Button)
+            {
+
+                contextMenuStrip1.Show(this, e.X, e.Y);
+            }
+            else if (e.Button == MouseButtons.Left)
             {
                 if (figura_actual == TipoFigura.Circulo)
                 {
                     Circulo c = new Circulo(e.X, e.Y);
-                    c.Dibuja(this);
-                    figuras.Add(c);
+                    c.Draw(this);
+                    rectangulos.Add(c);
 
 
                 }
@@ -43,8 +52,8 @@ namespace WindowsFormsApplication1
                 {
 
                     Rectangulo r = new Rectangulo(e.X, e.Y);
-                    r.Dibuja(this);
-                    figuras.Add(r);
+                    r.Draw(this);
+                    rectangulos.Add(r);
 
 
 
@@ -52,23 +61,26 @@ namespace WindowsFormsApplication1
 
             }
         
-            else if (e.Button == MouseButtons.Right)
+           /* else if (e.Button == MouseButtons.Right)
             {
 
                // this.contextMenuStrip1.Show(this, new Point(e.X, e.Y));
                 contextMenuStrip1.Show(this, e.X, e.Y);
 
-            }
+            }*/
         }
 
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            foreach (Figura f in figuras)
-            {
-                f.Dibuja(this);
+            /* foreach (Figura f in figuras)
+             {
+                 f.Dibuja(this);
 
-            }
+             }*/
+
+            foreach (Figura r in rectangulos)
+                r.Draw(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -89,6 +101,9 @@ namespace WindowsFormsApplication1
 
         private void rectanguloToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // figura_actual = TipoFigura.Rectangulo;
+            this.rectanguloToolStripMenuItem.Checked = true;
+            this.circuloToolStripMenuItem.Checked = false;
             figura_actual = TipoFigura.Rectangulo;
         }
 
@@ -104,8 +119,10 @@ namespace WindowsFormsApplication1
 
         private void circuloToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            figura_actual = TipoFigura.Circulo;
-            
+             figura_actual = TipoFigura.Circulo;
+            this.circuloToolStripMenuItem.Checked = true;
+            this.rectanguloToolStripMenuItem.Checked = false;
+
         }
     }
 }

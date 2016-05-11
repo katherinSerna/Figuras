@@ -44,14 +44,14 @@
             this.colorToolStripMenuItem,
             this.figuraToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             this.contextMenuStrip1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.contextMenuStrip1_MouseClick);
             // 
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.colorToolStripMenuItem.Text = "Color";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
@@ -61,21 +61,21 @@
             this.rectanguloToolStripMenuItem,
             this.circuloToolStripMenuItem});
             this.figuraToolStripMenuItem.Name = "figuraToolStripMenuItem";
-            this.figuraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.figuraToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.figuraToolStripMenuItem.Text = "Figura";
             this.figuraToolStripMenuItem.Click += new System.EventHandler(this.figuraToolStripMenuItem_Click);
             // 
             // rectanguloToolStripMenuItem
             // 
             this.rectanguloToolStripMenuItem.Name = "rectanguloToolStripMenuItem";
-            this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rectanguloToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.rectanguloToolStripMenuItem.Text = "Rectangulo";
             this.rectanguloToolStripMenuItem.Click += new System.EventHandler(this.rectanguloToolStripMenuItem_Click);
             // 
             // circuloToolStripMenuItem
             // 
             this.circuloToolStripMenuItem.Name = "circuloToolStripMenuItem";
-            this.circuloToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.circuloToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.circuloToolStripMenuItem.Text = "Circulo";
             this.circuloToolStripMenuItem.Click += new System.EventHandler(this.circuloToolStripMenuItem_Click);
             // 
@@ -83,6 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(511, 311);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Margin = new System.Windows.Forms.Padding(1);
