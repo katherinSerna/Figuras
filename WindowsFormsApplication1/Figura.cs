@@ -1,74 +1,106 @@
-﻿
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApplication1
+namespace WindowsFormsApplication2
 {
-    abstract class Figura
+    abstract class Figura : IComparable
     {
-        Random aleatorio = new Random();
+        protected int X;
+        protected int Y;
+        protected Pen pluma;
+        protected int ancho;
+        protected int largo;
+        protected Color color;
+        protected SolidBrush brocha;
 
-        public int X, Y;
-        public Pen pluma;
-        public Brush brocha;
-        public Color color_relleno;
-        public int ancho, largo;
-
-        public Figura(int x, int y)
+        public Figura(int x, int y, SolidBrush broch)
         {
             X = x;
             Y = y;
-            pluma = new Pen(Color.Red, 2);
-            ancho = aleatorio.Next(1,100);
-            largo = aleatorio.Next(1,100);
 
-
+            brocha = new SolidBrush(Color.Yellow);
+            pluma = new Pen(Color.Black, 5);
+            this.brocha = broch;
+            Random rnd = new Random();
+            ancho = rnd.Next(10, 60);
+            largo = ancho;
         }
 
-        public abstract void Dibuja(Form f);
+        public abstract void Draw(Form f);
 
-
-    }
-    class Rectangulo : Figura
-    {
-        public Rectangulo(int x, int y) : base(x, y)
+        public int CompareTo(object obj)
         {
 
+            return this.largo.CompareTo(((Figura)obj).largo);
         }
 
-        public override void Dibuja(Form f)
+        /*   public Figura(int x, int y, SolidBrush bro, Pen plu, int anc, int lar)
+           {
+               brocha = bro;
+               this.brocha = bro;
+               pluma = plu;
+               this.pluma = plu;
+               X = x;
+               Y = y;
+               ancho= anc;
+               this.ancho = anc;
+               largo = lar;
+               this.largo = lar;
+           }*/
+    }
+
+   
+
+    class Rectangulo : Figura
+    {
+        public Rectangulo(int x, int y, SolidBrush broch) : base(x, y, broch)
+        {
+        }
+
+        public override void Draw(Form f)
         {
             Graphics g = f.CreateGraphics();
             g.DrawRectangle(pluma, this.X, this.Y, ancho, largo);
-
-
-
+            g.FillRectangle(brocha, this.X, this.Y, ancho, largo);
         }
 
-
     }
-
 
     class Circulo : Figura
     {
-        public Circulo(int x, int y) : base(x, y)
+        public Circulo(int x, int y, SolidBrush broch) : base(x, y, broch)
         {
 
         }
 
-        public override void Dibuja(Form f)
+        public override void Draw(Form f)
         {
             Graphics g = f.CreateGraphics();
-            g.DrawEllipse(pluma, X, Y, ancho, largo);
-            
+            g.DrawEllipse(pluma, this.X, this.Y, ancho, largo);
+            g.FillEllipse(brocha, this.X, this.Y, ancho, largo);
         }
+
 
 
     }
 
-}
 
+    class Linea : Figura
+    {
+        public Linea(int x, int y, SolidBrush broch) : base(x, y, broch)
+        {
+
+        }
+
+        public override void Draw(Form f)
+        {
+            Graphics g = f.CreateGraphics();
+            g.DrawLine(pluma, this.X, this.Y, ancho, largo);
+            
+        }
+
+    }
+}
